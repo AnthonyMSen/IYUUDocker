@@ -107,3 +107,8 @@ services:
 剩余的按照crontab的格式修改即可，上面给出了参考示例
 
 最后一定要将你自定义的`crontab_list.sh`文件映射进docker容器中，然后重启容器，否则自定义规则将不会生效
+
+推荐配置下，文件结构是这样的：
+
+![](https://i.loli.net/2021/01/15/bknsPFoa3dZJNrH.png)
+
