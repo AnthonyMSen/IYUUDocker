@@ -9,10 +9,10 @@ then
         git clone https://gitee.com/ledc/IYUUAutoReseed.git /IYUU
 fi
 
-echo "Container start , Pull the latest code..."
-echo "容器启动，git 拉取最新代码..."
-cd /IYUU && git fetch --all >> /logs/update_iyuu.log
-cd /IYUU && git reset --hard origin/master >> /logs/update_iyuu.log
+# echo "Container start , Pull the latest code..."
+# echo "容器启动，git 拉取最新代码..."
+# cd /IYUU && git fetch --all >> /logs/update_iyuu.log
+# cd /IYUU && git reset --hard origin/master >> /logs/update_iyuu.log
 
 echo "Load the latest crontab task file..."
 echo "加载最新的定时任务文件..."
