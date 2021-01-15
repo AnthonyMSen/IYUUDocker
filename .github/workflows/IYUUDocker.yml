@@ -26,6 +26,9 @@ jobs:
         uses: ASzc/change-string-case-action@v1
         with:
           string: ${{ github.repository_owner }}
+      
+      - name: Get date
+        run: DATE=`date "+%Y-%m-%d_%H-%M-%S"`
 
       - name: 构建并推送到Dockerhub
         uses: docker/build-push-action@v2
@@ -34,4 +37,6 @@ jobs:
           file: ./Dockerfile
           platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
           push: true
-          tags: anthonymsen/iyuuautoreseed:latest
+          tags: |
+            anthonymsen/iyuuautoreseed:latest
+            anthonymsen/iyuuautoreseed:${{ DATE }}
