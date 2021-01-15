@@ -88,3 +88,22 @@ services:
     tty: true
 
 ```
+
+设置crontab非常简单，首先你需要一个`crontab_list.sh`文件，如下：
+
+```sh
+#每3天删除一遍log
+0 0 */3 * * rm -rf /logs/*.log
+
+#每12小时15分钟时更新IYUU
+15 */12 * * * cd /IYUU && git fetch --all >> /logs/update_iyuu.log 2>&1 && git reset --hard origin/master >> /logs/update_iyuu.log 2>&1
+
+#每小时45分运行IYUU
+45 * * * * php /IYUU/iyuu.php >> /logs/run_iyuu.log 2>&1
+```
+
+如果有不需要的功能，直接在那一行的开头打上`#`即可，这样就不会运行这一行代码，
+
+剩余的按照crontab的格式修改即可，上面给出了参考示例
+
+最后一定要将你自定义的`crontab_list.sh`文件映射进docker容器中，然后重启容器，否则自定义规则将不会生效
