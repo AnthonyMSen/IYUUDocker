@@ -39,4 +39,4 @@ jobs:
           push: true
           tags: |
             anthonymsen/iyuuautoreseed:latest
-            anthonymsen/iyuuautoreseed:${DATE}
+            "anthonymsen/iyuuautoreseed:${DATE}"
