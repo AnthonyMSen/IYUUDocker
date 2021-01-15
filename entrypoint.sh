@@ -11,7 +11,8 @@ fi
 
 echo "Container start , Pull the latest code..."
 echo "容器启动，git 拉取最新代码..."
-git -C /IYUU pull
+cd /IYUU && git fetch --all >> /logs/update_iyuu.log
+cd /IYUU && git reset --hard origin/master >> /logs/update_iyuu.log
 
 echo "Load the latest crontab task file..."
 echo "加载最新的定时任务文件..."
