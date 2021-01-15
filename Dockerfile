@@ -8,8 +8,6 @@ RUN set -ex \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
 
-ENV CRONTAB_LIST=crontab_list.sh
-
 # github action 构建
 COPY ./entrypoint.sh /usr/local/bin
 COPY ./crontab_list.sh /crontab_list.sh
