@@ -12,6 +12,7 @@ ENV CRONTAB_LIST=crontab_list.sh
 
 # github action 构建
 COPY ./entrypoint.sh /usr/local/bin
+COPY ./crontab_list.sh /crontab_list.sh
 
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
