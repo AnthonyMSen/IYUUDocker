@@ -33,7 +33,6 @@ jobs:
           push: true
           tags: |
             anthonymsen/iyuuautoreseed:latest
-            ghcr.io/anthonymsen/iyuuautoreseed:latest
   
   dockerhub-mirror-aliyun:
     needs: build-and-push
